@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>groupId</groupId>
+  <artifactId>zeebe-cherry-simpleexample</artifactId>
+  <version>1.0</version>
+
+  <properties>
+    <java.version>17</java.version>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+
+    <zeebe.version>8.2.0</zeebe.version>
+    <zeebe-client.version>8.2.3</zeebe-client.version>
+
+    <connector-core.version>0.8.1</connector-core.version>
+    <connector-validation.version>0.8.1</connector-validation.version>
+
+    <cherry.version>3.0.0</cherry.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <version>2.7.4</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.camunda</groupId>
+      <artifactId>spring-zeebe-starter</artifactId>
+      <version>${zeebe.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.camunda</groupId>
+      <artifactId>zeebe-client-java</artifactId>
+      <version>${zeebe-client.version}</version>
+    </dependency>
+
+    <!-- Accept Camunda Connector -->
+    <dependency>
+      <groupId>io.camunda.connector</groupId>
+      <artifactId>connector-core</artifactId>
+      <version>${connector-core.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.camunda.connector</groupId>
+      <artifactId>connector-validation</artifactId>
+      <version>${connector-validation.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.camunda.community</groupId>
+      <artifactId>zeebe-cherry-runtime</artifactId>
+      <version>${cherry.version}</version>
+    </dependency>
+
+
+  </dependencies>
+</project>

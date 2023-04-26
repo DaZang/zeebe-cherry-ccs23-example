@@ -1,0 +1,14 @@
+# use a OnPremise Zeebe engine
+zeebe.client:
+  broker.gateway-address: 127.0.0.1:26500
+  # zeebe.client.broker.gateway-address=host.docker.internal:26500
+  security.plaintext: true
+
+  # use a cloud Zeebe engine
+  # zeebe.client.cloud.region=
+  # zeebe.client.cloud.clusterId=
+  # zeebe.client.cloud.clientId=
+  # zeebe.client.cloud.clientSecret=
+
+
+server.port: 9091

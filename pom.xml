@@ -74,7 +74,47 @@
       <artifactId>zeebe-cherry-runtime</artifactId>
       <version>${cherry.version}</version>
     </dependency>
-
-
   </dependencies>
+
+
+
+  <build>
+
+    <plugins>
+      <!-- allow mvn spring-boot:run -->
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <version>2.7.5</version>
+        <configuration>
+          <mainClass>io.camunda.CherryApplication</mainClass>
+        </configuration>
+      </plugin>
+
+      <!-- build the jar with all dependencies -->
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>install</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+          <archive>
+            <manifest>
+              <mainClass>io.camunda.CherryApplication</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+
 </project>

@@ -18,7 +18,7 @@ class JokeApiClientTestTest {
 
    @Test
    void test() {
-      var test = jokeApiClient.getRandomJoke("en");
+      var test = jokeApiClient.getRandomJoke("programming");
       assertThat(test.getJoke()).isNotBlank();
    }
 }

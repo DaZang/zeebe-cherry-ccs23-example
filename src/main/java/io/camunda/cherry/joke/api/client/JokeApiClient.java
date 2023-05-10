@@ -15,9 +15,9 @@ public class JokeApiClient {
       this.restTemplate = restTemplate;
    }
 
-   public JokeResponse getRandomJoke(final String language) {
+   public JokeResponse getRandomJoke(final String category) {
       var resp = restTemplate.getForEntity(BASE_URL, JokeResponse.class,
-            Map.of("lang", language, "format", "json", "type", "single"));
+            Map.of("category", category, "format", "json", "type", "single", "lang", "en"));
       return resp.getBody();
    }
 }
